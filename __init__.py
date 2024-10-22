@@ -77,6 +77,8 @@ class PAINT_OT_CreatePaintProxies(bpy.types.Operator):
 
         # Join duplicated objects in 'paint proxies' collection
         bpy.context.view_layer.objects.active = paint_proxies[0]
+        bpy.ops.object.convert(target='MESH')
+
         bpy.ops.object.join()
 
         # Switch to Texture Paint mode
